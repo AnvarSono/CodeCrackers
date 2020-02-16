@@ -5,15 +5,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.util.List;
-
 public class RepairsModulePage {
 
     public RepairsModulePage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    //Iryna's elements:----------------------------------------------------------
     @FindBy(xpath = "//span[@title='Advanced Search...']")
     public WebElement advancedSearchButton;
 
@@ -31,10 +28,5 @@ public class RepairsModulePage {
 
     @FindBy(xpath = "(//li[@data-index='0'])[1]")
     public WebElement quotationsFilterSelectionCheckMark;
-
-    @FindBy(xpath = "//div//table//tbody//tr//td[@class='o_data_cell o_readonly_modifier']")
-    public List<WebElement> originalOrderList;
-
-    //-----------------------------------------------------------------------------------
 
  }
