@@ -17,4 +17,15 @@ public class LoginPage {
     @FindBy (xpath = "//button[@type=\"submit\"]")
     public WebElement submitButton;
 
+    //Iryna's elements:----------------------------------------
+    @FindBy(id = "login")
+    public WebElement emailInput;
+
+    @FindBy(id = "password")
+    public WebElement passwordInput;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement logInButton;
+    //-----------------------------------------------------------
+
 }
