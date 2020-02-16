@@ -7,8 +7,10 @@ import utilities.Driver;
 
 public class LoginPage {
     public LoginPage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
-    } @FindBy(xpath = "//input[@id=\"login\"]")
+    }
+    @FindBy(xpath = "//input[@id=\"login\"]")
     public WebElement eMailAdd;
     @FindBy(xpath = "//input[@id=\"password\"]")
     public WebElement passWord;
