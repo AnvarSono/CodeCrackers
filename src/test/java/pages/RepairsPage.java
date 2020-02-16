@@ -7,6 +7,7 @@ import utilities.Driver;
 
 public class RepairsPage {
     public RepairsPage() {
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//*[@data-menu=\"535\"]/span")
