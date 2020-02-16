@@ -29,4 +29,5 @@ public class RepairsModulePage {
     @FindBy(xpath = "(//li[@data-index='0'])[1]")
     public WebElement quotationsFilterSelectionCheckMark;
 
+
  }
