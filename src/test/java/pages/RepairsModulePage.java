@@ -8,6 +8,7 @@ import utilities.Driver;
 public class RepairsModulePage {
 
     public RepairsModulePage(){
+
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -28,5 +29,17 @@ public class RepairsModulePage {
 
     @FindBy(xpath = "(//li[@data-index='0'])[1]")
     public WebElement quotationsFilterSelectionCheckMark;
+
+    @FindBy(linkText = "Repairs")
+    public WebElement repairsModule;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_list_button_add']")
+    public WebElement RepairOrderCreateButton;
+
+    @FindBy(xpath = "(//input[@class='o_input ui-autocomplete-input'])[6]")
+    public WebElement currentLocationBox;
+
+    @FindBy(xpath = "//a[contains(text(),'Create and Edit...')]")
+    public WebElement currentLocationCreateAndEdit;
 
  }

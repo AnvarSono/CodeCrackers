@@ -72,6 +72,7 @@ public class IrynaTests {
 
     @AfterClass
     public void tearDown(){
+
         Driver.getDriver().quit();
     }
 }
