@@ -2,6 +2,7 @@ package iryna_tests;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,6 +34,7 @@ public class IrynaTests {
 
     @Test
     public void quotationsFilterTest(){
+        List<WebElement> originalOrdersStatusList = Driver.getDriver().findElements(By.xpath("//div//table//tbody//tr//td[@class='o_data_cell o_readonly_modifier']"));
         RepairsModulePage repairsModulePage = new RepairsModulePage();
         repairsModulePage.advancedSearchButton.click();
         Assert.assertTrue(repairsModulePage.filtersButton.isDisplayed(), "Filters button is not displayed. FAIL");
@@ -44,7 +46,24 @@ public class IrynaTests {
         Assert.assertTrue(repairsModulePage.quotationsFilterInSearchBox.isDisplayed(), "\"Quotations\" filter option is not displayed in Search box. FAIL");
         Assert.assertTrue(repairsModulePage.quotationsFilterSelectionCheckMark.getAttribute("class").equals("selected"), "\"Quotations\" filter option is not selected. FAIL");
         List<WebElement> filteredOrdersStatusList = Driver.getDriver().findElements(By.xpath("//div//table//tbody//tr//td[@class='o_data_cell o_readonly_modifier']"));
+        for(WebElement element: filteredOrdersStatusList){
+            Assert.assertTrue(repairsModulePage.quotationsFilter.getText().contains(element.getText()), "Filtered orders list contains options that do not correspond to this filter");
+        }
 
+        repairsModulePage.quotationsFilter.click();
+
+        Assert.assertTrue(repairsModulePage.quotationsFilterSelectionCheckMark.getAttribute("class").isEmpty(), "\"Quotations\" filter option is selected");
+
+        try{
+            Assert.assertFalse(repairsModulePage.quotationsFilterInSearchBox.isDisplayed(),"\"Quotations\" filter option is displayed in Search box");
+        }catch (NoSuchElementException e){
+            System.out.println("Element no longer exists. Verification PASSED");
+        }
+
+
+        List<WebElement> finalOrdersStatusList = Driver.getDriver().findElements(By.xpath("//div//table//tbody//tr//td[@class='o_data_cell o_readonly_modifier']"));
+
+        Assert.assertTrue(originalOrdersStatusList.toString().equals(finalOrdersStatusList.toString()));
 
 
 
