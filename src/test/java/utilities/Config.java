@@ -10,7 +10,7 @@ public class Config {
 
     static  {
 
-        java.lang.String path = "Configuration.properties";
+        String path = "Configuration.properties";
 
         try {
 
