@@ -28,7 +28,6 @@ public class IrynaTests {
         loginPage.passwordInput.sendKeys(Config.getProperty("briteUserPassword"));
         loginPage.logInButton.click();
         LandingPage landingPage = new LandingPage();
-        landingPage.repairsModule.click();
 
     }
 
@@ -72,6 +71,7 @@ public class IrynaTests {
 
     @AfterClass
     public void tearDown(){
+
         Driver.getDriver().quit();
     }
 }
