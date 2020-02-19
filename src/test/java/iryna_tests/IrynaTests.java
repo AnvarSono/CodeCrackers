@@ -69,6 +69,11 @@ public class IrynaTests {
 
     }
 
+    @Test
+    public void confirmFilterTest(){
+
+    }
+
     @AfterClass
     public void tearDown(){
 
