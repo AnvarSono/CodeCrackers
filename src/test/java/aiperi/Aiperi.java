@@ -1,10 +1,6 @@
 package aiperi;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LandingPage;
@@ -12,7 +8,6 @@ import pages.LoginPage;
 import utilities.Config;
 import utilities.Driver;
 
-import java.util.concurrent.TimeUnit;
 
 public class Aiperi {
 
