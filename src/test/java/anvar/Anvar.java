@@ -1,6 +1,8 @@
 package anvar;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LandingPage;
@@ -27,11 +29,23 @@ public class Anvar {
 
         RepairsModulePage repairsModulePage = new RepairsModulePage();
         repairsModulePage.repairsModule.click();
+        utilities.Pause.pause(5);
         repairsModulePage.RepairOrderCreateButton.click();
+        utilities.Pause.pause(5);
         repairsModulePage.currentLocationBox.click();
         //utilities.Pause.pause(3);
         repairsModulePage.currentLocationCreateAndEdit.click();
 
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//div[@class='o_form_view o_form_nosheet o_form_editable']")).isDisplayed(), "Invalid, tests is failed");
+
+
+
 
     }
+    @AfterClass
+    public void tearDown(){
+
+        Driver.getDriver().quit();
+    }
+
 }
