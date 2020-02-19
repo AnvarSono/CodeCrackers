@@ -1,6 +1,8 @@
 package NurkaTestNG;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -25,18 +27,34 @@ public class DeliveryAddress {
     @Test
     public void deliveryAddressEnter(){
         DeliveryAddressLandingPage deliveryAddressLandingPage = new DeliveryAddressLandingPage();
-        deliveryAddressLandingPage.createButton.sendKeys(Keys.ENTER);
+        deliveryAddressLandingPage.createButton.click();
         Assert.assertTrue(deliveryAddressLandingPage.createButton.isDisplayed(),"is not displayed, FAIL!");
-
+        deliveryAddressLandingPage.deliveryAddress.click();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        wait.until(ExpectedConditions.visibilityOf(deliveryAddressLandingPage.deliveryAddress));
+        deliveryAddressLandingPage.dropDownButton.click();
+        Assert.assertTrue(deliveryAddressLandingPage.dropDownButton.isDisplayed(),"if it is not clicked ,FAIL!");
 
 
     }
     @Test
     public void deliveryAddressClickSearchMore(){
+        DeliveryAddressLandingPage deliveryAddressLandingPage = new DeliveryAddressLandingPage();
+        deliveryAddressLandingPage.searchMore.click();
+        Assert.assertTrue(deliveryAddressLandingPage.searchMore.isDisplayed(),"is not displayed , FAIL!");
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        wait.until(ExpectedConditions.visibilityOf(deliveryAddressLandingPage.deliveryAddress));
+
 
     }
     @Test
     public void deliveryAddressEdit(){
+        DeliveryAddressLandingPage deliveryAddressLandingPage = new DeliveryAddressLandingPage();
+        deliveryAddressLandingPage.createAndEdit.click();
+        Assert.assertTrue(deliveryAddressLandingPage.createAndEdit.isDisplayed(),"is not displayed, FAIL!");
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        wait.until(ExpectedConditions.visibilityOf(deliveryAddressLandingPage.deliveryAddress));
+
 
     }
 }
