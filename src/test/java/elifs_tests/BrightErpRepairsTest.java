@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import utilities.Config;
 import utilities.Driver;
+import utilities.Pause;
 
 public class BrightErpRepairsTest {
     WebDriver driver;
@@ -29,15 +30,18 @@ public class BrightErpRepairsTest {
     @Test
     public void navigateToCreatePage() throws InterruptedException {
 
-        Thread.sleep(5000);
+
+        Pause.pause(5);
         brightErpRepairsPage.repairButton.click();
-        Thread.sleep(5000);
+        Pause.pause(5);
         brightErpRepairsPage.createButton.click();
-        Thread.sleep(5000);
+
+        Pause.pause(5);
         brightErpCreatePages.customerField.click();
         //brightErpCreatePages.customerField.
         brightErpCreatePages.dropDown.sendKeys("elif");
-        Thread.sleep(3000);
+
+        Pause.pause(3);
 
         for(WebElement lists :brightErpCreatePages.customerList){
             Assert.assertTrue(lists.getText().contains("elif"),"not found");
@@ -49,16 +53,21 @@ public class BrightErpRepairsTest {
     }
     @Test
     public void searchCustomer() throws InterruptedException {
-        Thread.sleep(5000);
+
+        Pause.pause(5);
         brightErpRepairsPage.repairButton.click();
-        Thread.sleep(5000);
+
+        Pause.pause(5);
         brightErpRepairsPage.createButton.click();
-        Thread.sleep(5000);
+
+        Pause.pause(5);
 
         brightErpCreatePages.customerField.click();
-        Thread.sleep(8000);
+
+        Pause.pause(3);
         brightErpCreatePages.searchMore.click();
-        Thread.sleep(3000);
+
+        Pause.pause(3);
         //brightErpCreatePages.searchField.sendKeys("elif");
 
         String actualSearchHeader = brightErpCreatePages.searchCustomerHeader.getText();
@@ -70,32 +79,43 @@ public class BrightErpRepairsTest {
 
     @Test
     public void newCustomer() throws InterruptedException {
-        Thread.sleep(5000);
+        //Thread.sleep(5000)
+        Pause.pause(5);
         brightErpRepairsPage.repairButton.click();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
+        Pause.pause(5);
         brightErpRepairsPage.createButton.click();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
+        Pause.pause(5);
         brightErpCreatePages.customerField.click();
-        Thread.sleep(8000);
+        //Thread.sleep(8000);
+        Pause.pause(5);
         brightErpCreatePages.createAndEdit.click();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+        Pause.pause(3);
         brightErpCreatePages.nameBox.sendKeys("elif");
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+        Pause.pause(3);
         brightErpCreatePages.saveBttn.click();
         //String actualText = brightErpCreatePages.customerField.getText();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+        Pause.pause(3);
         brightErpCreatePages.customLink.click();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+        Pause.pause(3);
         brightErpCreatePages.createButton2.click();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+        Pause.pause(3);
         brightErpCreatePages.contactName.sendKeys("ayse");
         String expected = "ayse";
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
+        Pause.pause(5);
         //String actual = brightErpCreatePages.contactName.getText();
         //Assert.assertTrue(actual.contains(expected));
         brightErpCreatePages.saveAndClose.click();
         String expectedTitle = "Open: Customer";
-        Thread.sleep(8000);
+        //Thread.sleep(8000);
+        Pause.pause(5);
         System.out.println(brightErpCreatePages.openCustomer.getText());
         if(brightErpCreatePages.openCustomer.getText().contains(expectedTitle)){
             System.out.println("Test is passed");
