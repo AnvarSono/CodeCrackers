@@ -14,7 +14,6 @@ import utilities.Pause;
 
 public class Aiperi {
 
-
     RepairOrdersPage repairOrdersPage = new RepairOrdersPage();
 
     @BeforeClass
