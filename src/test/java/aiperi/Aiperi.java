@@ -33,6 +33,7 @@ public class Aiperi {
     }
     @Test
     public void mainRepairOrdersPage(){
+        Pause.pause(3);
         repairOrdersPage.selectAllCheckboxes.click();
         Pause.pause(3);
         repairOrdersPage.deselectAllCheckboxes.click();
