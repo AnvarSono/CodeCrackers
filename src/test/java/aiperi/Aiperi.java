@@ -21,8 +21,8 @@ public class Aiperi {
         loginPage.emailInput.sendKeys(Config.getProperty("briteManagerEmail"));
         loginPage.passwordInput.sendKeys(Config.getProperty("briteManagerPassword"));
         loginPage.logInButton.click();
-      
-
+        LandingPage landingPage = new LandingPage();
+        landingPage.repairsModule.click();
 
 
     }
