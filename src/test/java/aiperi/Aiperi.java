@@ -1,6 +1,7 @@
 package aiperi;
 
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LandingPage;
@@ -20,8 +21,8 @@ public class Aiperi {
         loginPage.emailInput.sendKeys(Config.getProperty("briteManagerEmail"));
         loginPage.passwordInput.sendKeys(Config.getProperty("briteManagerPassword"));
         loginPage.logInButton.click();
-        LandingPage landingPage = new LandingPage();
-        landingPage.repairsModule.click();
+      
+
 
 
     }
