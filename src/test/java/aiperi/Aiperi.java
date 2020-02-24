@@ -1,21 +1,20 @@
 package aiperi;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.LandingPage;
 import pages.LoginPage;
 import utilities.Config;
 import utilities.Driver;
+import utilities.Pause;
 
-import java.util.concurrent.TimeUnit;
+
 
 public class Aiperi {
 
+    RepairOrdersPage repairOrdersPage = new RepairOrdersPage();
 
     @BeforeClass
     public void setUp() {
@@ -26,17 +25,42 @@ public class Aiperi {
         loginPage.passwordInput.sendKeys(Config.getProperty("briteManagerPassword"));
         loginPage.logInButton.click();
         LandingPage landingPage = new LandingPage();
+        Pause.pause(3);
         landingPage.repairsModule.click();
 
 
     }
-
-
     @Test
-    public void  mainCheckbox(){
+    public void mainRepairOrdersPage(){
+        Pause.pause(3);
+        repairOrdersPage.selectAllCheckboxes.click();
+        Pause.pause(3);
+        repairOrdersPage.deselectAllCheckboxes.click();
+        Pause.pause(3);
 
-        
+        repairOrdersPage.sortRepairReference.click();
+        Pause.pause(3);
+
+        repairOrdersPage.sortProductToReference.click();
+        Pause.pause(3);
+
+        repairOrdersPage.sortCustomers.click();
+        Pause.pause(3);
+
+        repairOrdersPage.sortDeliveryAddress.click();
+        Pause.pause(3);
+
+        repairOrdersPage.sortWarrantyExpiration.click();
+        Pause.pause(3);
+
+        repairOrdersPage.sortStatus.click();
+        Pause.pause(3);
+
     }
+
+
+
+
 
 }
 

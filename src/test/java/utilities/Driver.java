@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Driver {
-    private static WebDriver driver;
+    public static WebDriver driver;
     private Driver(){
 
     }
@@ -27,7 +27,7 @@ public class Driver {
                 driver = new FirefoxDriver();
             }
 
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
 
         }
