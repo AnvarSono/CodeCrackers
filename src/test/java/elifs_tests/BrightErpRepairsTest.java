@@ -5,6 +5,7 @@ import elifs_pages.BrightErpRepairsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -124,10 +125,13 @@ public class BrightErpRepairsTest {
             System.out.println("test is failed");
         }
 
-
-
-
     }
+    @AfterClass
+    public void tearDown(){
+
+        Driver.getDriver().quit();
+    }
+
 }
 
 
