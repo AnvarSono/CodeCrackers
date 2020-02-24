@@ -13,6 +13,7 @@ import utilities.Driver;
 import utilities.Pause;
 
 public class BrightErpRepairsTest {
+    //Comment
     WebDriver driver;
     BrightErpRepairsPage brightErpRepairsPage = new BrightErpRepairsPage();
     BrightErpCreatePages brightErpCreatePages = new BrightErpCreatePages();
