@@ -50,6 +50,27 @@ public class RepairsModulePage {
     @FindBy(xpath = "(//li[@data-index='1'])[1]")
     public WebElement confirmedFilterSelectionCheckMark;
 
+    @FindBy(xpath = "//a[.='Ready To Repair']")
+    public WebElement readyToRepairFilter;
+
+    @FindBy(xpath = "//span[contains(text(),'Ready To Repair')]")
+    public WebElement readyToRepairFilterInSearchBox;
+
+    @FindBy(xpath = "(//li[@data-index='2'])[1]")
+    public WebElement readyToRepairFilterSelectionCheckMark;
+
+    @FindBy(xpath = "//a[.='Invoiced']")
+    public WebElement invoicedFilter;
+
+    @FindBy(xpath = "//span[contains(text(),'Invoiced')]")
+    public WebElement invoicedFilterInSearchBox;
+
+    @FindBy(xpath = "(//li[@data-index='0'])[2]")
+    public WebElement invoicedFilterSelectionCheckMark;
+
+
+
+
     @FindBy(linkText = "Repairs")
     public WebElement repairsModule;
 
