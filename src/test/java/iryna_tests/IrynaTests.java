@@ -28,6 +28,7 @@ public class IrynaTests {
 
     @AfterMethod
     public void tearDown(){
+
         Driver.closeDriver();
     }
 
