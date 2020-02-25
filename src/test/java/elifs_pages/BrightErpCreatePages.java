@@ -13,7 +13,7 @@ public class BrightErpCreatePages {
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "//label[@for=\"o_field_input_108\"]")
+    @FindBy(xpath = "//*[@id=\"o_field_input_69\"]")
     public WebElement customerField;
     @FindBy(xpath = "//*[@id=\"modal_135\"]/div/div/div[2]/input")
     public WebElement customName;
@@ -37,7 +37,7 @@ public class BrightErpCreatePages {
     @FindBy(linkText = "Create and Edit...")
     public WebElement createAndEdit;
 
-    @FindBy(xpath = "//input[@id=\"o_field_input_155\"]")
+    @FindBy(xpath = "//*[@id=\"o_field_input_116\"]")
     public WebElement nameBox;
     @FindBy(xpath = "//button[@class=\"btn btn-primary btn-sm o-kanban-button-new\"]")
     public WebElement createButton2;
