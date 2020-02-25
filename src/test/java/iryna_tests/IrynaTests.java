@@ -59,6 +59,10 @@ public class IrynaTests {
         //creating a list in order to store all the existing orders' statuses:
         List<WebElement> originalOrdersStatusList = repairsModulePage.listOfOrders;
 
+        //wait.until(ExpectedConditions.visibilityOf(repairsModulePage.filtersButton));
+
+        Thread.sleep(3000);
+
         //verify if filters button is displayed:
         Assert.assertTrue(repairsModulePage.filtersButton.isDisplayed(), "Filters button is not displayed. FAIL");
 
@@ -78,7 +82,7 @@ public class IrynaTests {
         Assert.assertTrue(repairsModulePage.quotationsFilterSelectionCheckMark.getAttribute("class").equals("selected"), "\"Quotations\" filter option is not selected. FAIL");
 
         //get the filtered list of repairs orders':
-        List<WebElement> filteredOrdersStatusList = repairsModulePage.listOfOrders;
+        List<WebElement> filteredOrdersStatusList = repairsModulePage.quotationsListOfOrders;
 
         //wait until the filter is selected:
         wait.until(ExpectedConditions.visibilityOf(repairsModulePage.quotationsFilter));
@@ -111,7 +115,7 @@ public class IrynaTests {
 
 
     @Test
-    public void confirmedFilterTest() {
+    public void confirmedFilterTest() throws InterruptedException {
 
         RepairsModulePage repairsModulePage = new RepairsModulePage();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
@@ -138,6 +142,8 @@ public class IrynaTests {
         //creating a list in order to store all the existing orders' statuses:
         List<WebElement> originalOrdersStatusList = repairsModulePage.listOfOrders;
 
+        //wait.until(ExpectedConditions.visibilityOf(repairsModulePage.filtersButton));
+        Thread.sleep(2000);
         //verify if filters button is displayed:
         Assert.assertTrue(repairsModulePage.filtersButton.isDisplayed(), "Filters button is not displayed. FAIL");
 
@@ -149,7 +155,7 @@ public class IrynaTests {
 
         //click the desired filter:
         repairsModulePage.confirmedFilter.click();
-
+        Thread.sleep(1000);
         //verify if filter is displayed in a search box:
         Assert.assertTrue(repairsModulePage.confirmedFilterInSearchBox.isDisplayed(), "\"Confirmed\" filter option is not displayed in Search box. FAIL");
 
@@ -157,14 +163,16 @@ public class IrynaTests {
         Assert.assertTrue(repairsModulePage.confirmedFilterSelectionCheckMark.getAttribute("class").equals("selected"), "\"Confirmed\" filter option is not selected. FAIL");
 
         //get the filtered list of repairs orders':
-        List<WebElement> filteredOrdersStatusList = repairsModulePage.listOfOrders;
+        List<WebElement> filteredOrdersStatusList = repairsModulePage.confirmedListOfOrders;
 
         //wait until the filter is selected:
         wait.until(ExpectedConditions.visibilityOf(repairsModulePage.confirmedFilter));
 
+
+        Thread.sleep(5000);
         //verify if list contains only filtered orders:
         for(WebElement element: filteredOrdersStatusList){
-
+            System.out.println("Order status: " + element.getText());
             Assert.assertTrue(repairsModulePage.confirmedFilter.getText().contains(element.getText()), "Filtered orders list contains options that do not correspond to this filter");
         }
 
@@ -216,6 +224,8 @@ public class IrynaTests {
         //creating a list in order to store all the existing orders' statuses:
         List<WebElement> originalOrdersStatusList = repairsModulePage.listOfOrders;
 
+      //  wait.until(ExpectedConditions.visibilityOf(repairsModulePage.filtersButton));
+        Thread.sleep(3000);
         //verify if filters button is displayed:
         Assert.assertTrue(repairsModulePage.filtersButton.isDisplayed(), "Filters button is not displayed. FAIL");
 
@@ -235,7 +245,7 @@ public class IrynaTests {
         Assert.assertTrue(repairsModulePage.readyToRepairFilterSelectionCheckMark.getAttribute("class").equals("selected"), "\"Ready To Repair\" filter option is not selected. FAIL");
 
         //get the filtered list of repairs orders':
-        List<WebElement> filteredOrdersStatusList = repairsModulePage.listOfOrders;
+        List<WebElement> filteredOrdersStatusList = repairsModulePage.readyToRepairListOfOrders;
 
         //wait until the filter is selected:
         wait.until(ExpectedConditions.visibilityOf(repairsModulePage.readyToRepairFilter));
@@ -266,7 +276,7 @@ public class IrynaTests {
     }
 
     @Test
-    public void invoicedFilterTest(){
+    public void invoicedFilterTest() throws InterruptedException {
 
         RepairsModulePage repairsModulePage = new RepairsModulePage();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
@@ -293,6 +303,8 @@ public class IrynaTests {
         //creating a list in order to store all the existing orders' statuses:
         List<WebElement> originalOrdersStatusList = repairsModulePage.listOfOrders;
 
+       // wait.until(ExpectedConditions.visibilityOf(repairsModulePage.filtersButton));
+        Thread.sleep(2000);
         //verify if filters button is displayed:
         Assert.assertTrue(repairsModulePage.filtersButton.isDisplayed(), "Filters button is not displayed. FAIL");
 
@@ -304,6 +316,8 @@ public class IrynaTests {
 
         //click the desired filter:
         repairsModulePage.invoicedFilter.click();
+
+        wait.until(ExpectedConditions.visibilityOf(repairsModulePage.invoicedFilterInSearchBox));
 
         //verify if filter is displayed in a search box:
         Assert.assertTrue(repairsModulePage.invoicedFilterInSearchBox.isDisplayed(), "\"Invoiced\" filter option is not displayed in Search box. FAIL");
