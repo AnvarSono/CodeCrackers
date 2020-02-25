@@ -32,6 +32,15 @@ public class RepairsModulePage {
     @FindBy(xpath = "//div//table//tbody//tr//td[@class='o_data_cell o_readonly_modifier']")
     public List<WebElement> listOfOrders;
 
+    @FindBy(xpath = "//div//table//tbody//tr//td[.='Confirmed']")
+    public List<WebElement> confirmedListOfOrders;
+
+    @FindBy(xpath = "//div//table//tbody//tr//td[.='Ready to Repair']")
+    public List<WebElement> readyToRepairListOfOrders;
+
+    @FindBy(xpath = "//div//table//tbody//tr//td[.='Quotation']")
+    public List<WebElement> quotationsListOfOrders;
+
     @FindBy(xpath = "//a[.='Quotations']")
     public WebElement quotationsFilter;
 
