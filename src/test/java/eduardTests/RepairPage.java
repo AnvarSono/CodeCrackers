@@ -27,25 +27,25 @@ public class RepairPage {
     public WebElement searchMoreButton;
 
     @FindBy(xpath = "//button[@class='btn btn-sm btn-primary']")
-    WebElement createButton2;
+    public WebElement createButton2;
 
     @FindBy(xpath = "//input[@placeholder='Product Name']")
-    WebElement greyText;
+    public WebElement greyText;
 
     @FindBy(id = "o_field_input_496")
-    WebElement inputProductName;
+    public WebElement inputProductName;
 
     @FindBy(id = "o_field_input_503")
-    WebElement productTypeButton;
+   public WebElement productTypeButton;
 
     @FindBy(id = "o_field_input_504")
-    WebElement internalReferenceTextBox;
+    public WebElement internalReferenceTextBox;
 
     @FindBy(id = "o_field_input_505")
-    WebElement bareCodeBoxText;
+   public WebElement bareCodeBoxText;
 
     @FindBy(id = "o_field_input_506")
-    List<WebElement> categoryList;
+     public List<WebElement> categoryList;
 
     @FindBy(xpath = "//input[@id='o_field_input_507']")
     public WebElement salePriceBox;
