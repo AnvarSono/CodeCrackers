@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CodeCrackers" />
+        <module name="Brite" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Brite" target="1.8" />
       <module name="CodeCrackers" target="1.8" />
     </bytecodeTargetLevel>
   </component>
